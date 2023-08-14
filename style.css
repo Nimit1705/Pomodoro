@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Roboto+Mono:wght@500&family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Roboto+Mono:wght@500&family=Varela+Round&display=swap');
+
+*{
+    margin:0;
+    padding: 0;
+    font-family: 'Varela Round', sans-serif;
+}
+
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(232, 132, 61);
+}
+
+button{
+    background-color: transparent;
+    border: 0.4vh solid aliceblue;
+    font-family: 'Roboto Mono', monospace;
+
+}
+
+.pomodoro-timer{
+    font-size: 8em;
+}
+
+
+.navbar{
+    width: 99.8%;
+    height: 15vh;
+    margin-bottom: 15vh;
+    border: 2px white solid;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+.timeFrame{
+    display: flex;
+    flex-direction: column;
+    /* border:2px red solid; */
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.controls{
+    display: flex;
+    gap: 2vh;
+    
+}
+
+.controls button{
+    font-family: 'Roboto Mono', monospace;
+    height: 3em;
+    width: 5.5em;
+    border-radius: 2.3em;
+    font-weight: bolder;
+    font-size: 3vh;
+    padding: 0;
+}
+
+.reset{
+    background-color: rgb(231, 43, 80);
+    color:antiquewhite;
+    padding: 0;
+}
+
+
+.timerbtn{
+
+    height: 4em;
+    width: 9em;
+    border-radius: 20em;
+    border: transparent;
+    font-size: 1em;
+    font-weight: bolder;
+    color:aliceblue;
+    transition: 250ms;
+    
+}
+
+.btns{
+    display: flex;
+    gap: 20px;
+}
+
+.timerbtn:hover{
+    background-color: aliceblue;
+    color: black;
+    
+}
+
+.active{
+    background-color: aliceblue;
+    color: black;
+}
+
+
+@media screen and (max-width: 600px){
+
+    .btns{
+        display: flex;
+        gap: 5vw;
+    }
+    
+    .pomodoro-timer{
+        font-size: 25vw;
+    }
+    .controls button{
+        font-family: 'Roboto Mono', monospace;
+        height: 3em;
+        width: 5em;
+        border-radius: 2.3em;
+        font-weight: bolder;
+        font-size: 2.5vh;
+        padding: 0;
+    }
+    
+    .reset{
+        background-color: rgb(231, 43, 80);
+        color:antiquewhite;
+        padding: 0;
+    }
+    
+    .timerbtn{
+        height: 14vw;
+        width: 28vw;
+        border-radius: 20em;
+        font-size: 3.5vw;
+        font-weight: bolder;
+        color:aliceblue;
+        transition: 250ms;
+       
+    }
+
+    .active{
+        background-color: aliceblue;
+        color: black;
+    }
+
+    
+}
