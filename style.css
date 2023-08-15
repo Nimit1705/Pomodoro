@@ -13,139 +13,234 @@ body{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: rgb(232, 132, 61);
+    background-color: #151515;
 }
 
 button{
     background-color: transparent;
-    border: 0.4vh solid aliceblue;
+    border: 1px solid hsla(0,0%,100%,.192);
     font-family: 'Roboto Mono', monospace;
 
 }
 
 .pomodoro-timer{
-    font-size: 8em;
+    font-size: 13em;
+    color:#bbb;
 }
 
 
 .navbar{
     width: 99.8%;
     height: 15vh;
-    margin-bottom: 15vh;
-    border: 2px white solid;
+    /* margin-bottom: 9vh; */
+    /* border: 2px white solid; */
 }
 
 .container{
+    border: 1px solid hsla(0,0%,100%,.192);
+    border-radius: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 100%;
+    height: 30em;
+    width: 40em;
+    gap: 1em;
+    background-color: #1e1e1e;
+
 }
 
 
 .timeFrame{
     display: flex;
     flex-direction: column;
-    /* border:2px red solid; */
     align-items: center;
     justify-content: center;
+    gap: 0.8em;
     
 }
 
 .controls{
     display: flex;
-    gap: 2vh;
+    align-items: space-between;
+    justify-content: center;
+    flex:1;
+    gap: 390px;
     
 }
 
-.controls button{
-    font-family: 'Roboto Mono', monospace;
-    height: 3em;
-    width: 5.5em;
-    border-radius: 2.3em;
-    font-weight: bolder;
-    font-size: 3vh;
-    padding: 0;
+
+.reset {
+    background: transparent;
+    border: none;
+    /* margin-left:20px; */
 }
 
-.reset{
-    background-color: rgb(231, 43, 80);
-    color:antiquewhite;
-    padding: 0;
+.start{
+    border:none;
+    /* margin-left: 10px; */
 }
+
 
 
 .timerbtn{
 
     height: 4em;
-    width: 9em;
-    border-radius: 20em;
-    border: transparent;
+    width: 10.7em;
+    /* border-radius: 20em; */
+    border: 1px solid hsla(0,0%,100%,.192);
     font-size: 1em;
     font-weight: bolder;
-    color:aliceblue;
+    color:#bbb;
     transition: 250ms;
     
 }
 
+
+#pomodoro{
+    position: relative;
+    border-radius: 1em 0 0 1em;
+    border-right: transparent;
+}
+
+
+#pomodoro::after {
+    content: "";
+    position: absolute;
+    top: 0; right: 0; bottom: 0;
+    width: 1.5px;
+    background: linear-gradient(#151515, hsla(0, 0%, 100%, 0.374), #151515);
+    
+}
+
+
+#long{
+    position: relative;
+    border-radius: 0 1em 1em 0;
+    border-left: transparent;
+}
+
+#long::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
+    width: 1.5px;
+    background: linear-gradient(#151515, hsla(0, 0%, 100%, 0.374), #151515);
+}
+
+#short{
+    position: relative;
+    border-left: transparent;
+    border-right: transparent;
+}
+
+#short::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
+}
+
+
+
+
 .btns{
     display: flex;
-    gap: 20px;
+    /* gap: 20px; */
 }
 
 .timerbtn:hover{
-    background-color: aliceblue;
-    color: black;
+    background-color: #323232;
+    /* color: black; */
     
 }
 
 .active{
-    background-color: aliceblue;
-    color: black;
+    background-color: #1d93ab;
+    color:#dddddd;
 }
 
 
 @media screen and (max-width: 600px){
 
+    .container{
+        border: 1px solid hsla(0,0%,100%,.192);
+        border-radius: 3vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 75vw;
+        width: 90vw;
+        gap: 1em;
+        background-color: #1e1e1e;
+        margin-top: 10vh;
+    
+    }
+
     .btns{
         display: flex;
-        gap: 5vw;
     }
     
     .pomodoro-timer{
         font-size: 25vw;
     }
+
     .controls button{
         font-family: 'Roboto Mono', monospace;
-        height: 3em;
-        width: 5em;
-        border-radius: 2.3em;
+        /* border-radius: 2.3em; */
         font-weight: bolder;
         font-size: 2.5vh;
         padding: 0;
     }
     
+    .controls{
+        display: flex;
+        gap: 200px;
+    }
+
+
     .reset{
-        background-color: rgb(231, 43, 80);
-        color:antiquewhite;
-        padding: 0;
+        background: transparent;
+        border: none;
+        fill:rgb(244, 76, 76);
+        margin-left: 2px;
+    }
+
+    .start{
+        margin-top:1px;
+        height: 3em;
+        width: 2em;
+        border: 1px solid hsla(0, 0%, 100%, 0);
+        background-color:transparent ;
+        fill:#dddddd;
+        margin-right:5px;
+    }
+
+    .start svg{
+        width: 65px;
+        height: 60px;
     }
     
     .timerbtn{
         height: 14vw;
         width: 28vw;
-        border-radius: 20em;
         font-size: 3.5vw;
         font-weight: bolder;
-        color:aliceblue;
+        color:#bbb;
         transition: 250ms;
        
     }
 
+    
+    .timerbtn:hover{
+        background-color: #1d93ab;
+        /* color: black; */
+        
+    }
+
     .active{
-        background-color: aliceblue;
-        color: black;
+        background-color: #1d93ab;
+        color:#dddddd;
     }
 
     
