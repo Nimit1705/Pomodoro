@@ -1,10 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Roboto+Mono:wght@500&family=Varela+Round&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Roboto+Mono:wght@500&family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&display=swap');
 
 *{
     margin:0;
     padding: 0;
     font-family: 'Varela Round', sans-serif;
+}
+
+:root{
+    --primary-color: #151515;
+    --secondary-color: #1e1e1e;
+    --accent-color: #1d93ab;
+    
+    --light-font-color: #bbb;
+    --ligh-nav-color: #c7c7c7;
+    --active-text-color: #ddd;
+
+    --borders: 1px solid hsla(0,0%,100%,.192);
+    --button-border-accent: linear-gradient(var(--primary-color), hsla(0, 0%, 100%, 0.374), var(--primary-color));
+    
+}
+
+
+.lightmode{
+    --primary-color: #efefef;
+    --secondary-color: #fff;
+    --accent-color: #64ccf8;
+    
+    --light-font-color: #303030;
+    --ligh-nav-color: #1c1c1c;
+    --active-text-color: #4d4d4d;
+
+    --borders: 1px solid #dedede;
+    --button-border-accent: linear-gradient(var(--secondary-color), hsla(0, 0%, 0%, 0.374), var(--secondary-color));
+    
 }
 
 
@@ -13,31 +43,59 @@ body{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: #151515;
+    background-color: var(--primary-color);
 }
 
 button{
     background-color: transparent;
-    border: 1px solid hsla(0,0%,100%,.192);
+    border: var(--borders);
     font-family: 'Roboto Mono', monospace;
 
 }
 
 .pomodoro-timer{
     font-size: 13em;
-    color:#bbb;
+    color:var(--light-font-color);
 }
 
 
 .navbar{
     width: 99.8%;
     height: 15vh;
-    /* margin-bottom: 9vh; */
-    /* border: 2px white solid; */
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    justify-content: space-between;
 }
 
+.navbar a{
+    text-decoration: none;
+    color:var(--ligh-nav-color);
+}
+
+.logo a{
+    font-family: 'Patrick Hand SC', cursive;
+    font-size:60px;
+    margin-left: 3vh;
+}
+
+.navbtns{
+    margin-right:3vh;
+    display: flex;
+    gap: 1em;
+    list-style: none;
+}
+
+.navbtns button{
+    border:transparent;
+}
+
+
+
+
+
 .container{
-    border: 1px solid hsla(0,0%,100%,.192);
+    border: var(--borders);
     border-radius: 2rem;
     display: flex;
     align-items: center;
@@ -46,7 +104,7 @@ button{
     height: 30em;
     width: 40em;
     gap: 1em;
-    background-color: #1e1e1e;
+    background-color: var(--secondary-color);
 
 }
 
@@ -73,12 +131,16 @@ button{
 .reset {
     background: transparent;
     border: none;
-    /* margin-left:20px; */
+    margin-left:20px;
 }
 
 .start{
     border:none;
-    /* margin-left: 10px; */
+    margin-left: 20px;
+}
+
+.start svg{
+    fill: var(--light-font-color);
 }
 
 
@@ -88,10 +150,10 @@ button{
     height: 4em;
     width: 10.7em;
     /* border-radius: 20em; */
-    border: 1px solid hsla(0,0%,100%,.192);
+    border: var(--borders);
     font-size: 1em;
     font-weight: bolder;
-    color:#bbb;
+    color: var(--light-font-color);
     transition: 250ms;
     
 }
@@ -109,7 +171,7 @@ button{
     position: absolute;
     top: 0; right: 0; bottom: 0;
     width: 1.5px;
-    background: linear-gradient(#151515, hsla(0, 0%, 100%, 0.374), #151515);
+    background: var(--button-border-accent) ;
     
 }
 
@@ -124,8 +186,8 @@ button{
     content: "";
     position: absolute;
     top: 0; left: 0; bottom: 0;
-    width: 1.5px;
-    background: linear-gradient(#151515, hsla(0, 0%, 100%, 0.374), #151515);
+    width: 2px;
+    background: var(--button-border-accent);
 }
 
 #short{
@@ -150,20 +212,33 @@ button{
 
 .timerbtn:hover{
     background-color: #323232;
-    /* color: black; */
+    color: var(--primary-color)
     
 }
 
 .active{
-    background-color: #1d93ab;
-    color:#dddddd;
+    background-color: var(--accent-color);
+    color:var(--active-text-color);
 }
 
 
 @media screen and (max-width: 600px){
 
+    .navbar{
+        width: 99.8%;
+        height: 100%;
+        display: flex;
+        z-index: -1;
+    }
+
+    .navbtns button{
+        padding-top: 7px;
+    }
+    
+    
+
     .container{
-        border: 1px solid hsla(0,0%,100%,.192);
+        border: var(--borders);
         border-radius: 3vh;
         display: flex;
         align-items: center;
@@ -172,9 +247,8 @@ button{
         height: 75vw;
         width: 90vw;
         gap: 1em;
-        background-color: #1e1e1e;
-        margin-top: 10vh;
-    
+        background-color: var(--secondary-color);
+        margin-top: 15vh;
     }
 
     .btns{
@@ -187,7 +261,6 @@ button{
 
     .controls button{
         font-family: 'Roboto Mono', monospace;
-        /* border-radius: 2.3em; */
         font-weight: bolder;
         font-size: 2.5vh;
         padding: 0;
@@ -210,9 +283,8 @@ button{
         margin-top:1px;
         height: 3em;
         width: 2em;
-        border: 1px solid hsla(0, 0%, 100%, 0);
         background-color:transparent ;
-        fill:#dddddd;
+        fill:var(--active-text-color);
         margin-right:5px;
     }
 
@@ -226,21 +298,28 @@ button{
         width: 28vw;
         font-size: 3.5vw;
         font-weight: bolder;
-        color:#bbb;
+        color: var(--light-font-color);
         transition: 250ms;
        
     }
 
     
     .timerbtn:hover{
-        background-color: #1d93ab;
-        /* color: black; */
+        background-color: var(--accent-color);
         
     }
 
     .active{
-        background-color: #1d93ab;
-        color:#dddddd;
+        background-color: var(--accent-color);
+        color:var(--active-text-color);
+    }
+
+    #long::after {
+        content: "";
+        position: absolute;
+        top: 0; left: 0; bottom: 0;
+        width: 1.5px;
+        background: var(--button-border-accent);
     }
 
     
