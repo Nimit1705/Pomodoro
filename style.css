@@ -90,7 +90,14 @@ button{
     border:transparent;
 }
 
+.theme svg{
+    fill: var(--light-font-color);
+    stroke: var(--light-font-color);
+}
 
+.settings svg{
+    fill: var(--light-font-color);
+}
 
 
 
@@ -221,6 +228,63 @@ button{
     color:var(--active-text-color);
 }
 
+#setting-modal{
+    width: 38vw;
+    height: 80vh;
+    max-width: 800px;
+    margin: 5% auto;
+    background-color: #fff;
+    border-radius: 5vh;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    /* display: flex; */
+}
+
+.setting-nav{
+    display: flex;
+    justify-content:flex-end;
+    align-items: flex-end;
+    margin-top: 10px;
+    margin-right: 20px;
+}
+
+.modal-content{
+    display:flex;
+    width: 38vw;
+    height: 80vh;
+}
+
+.left-section {
+    text-align: center;
+    width: 30%;
+    height: 100%;
+    padding: 20px;
+    border-right: 1px solid #ccc;
+    /* display: flex;
+    flex-direction: column; */
+}
+
+.setting-options{
+    /* margin-top: 20%; */
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.setting-options li {
+    cursor: pointer;
+}
+
+.right-section {
+    margin-top: 2vh;
+    margin-left: 2vw;
+    width: 70%;
+    height: 100%;
+
+}
+
+
 
 @media screen and (max-width: 600px){
 
@@ -228,13 +292,11 @@ button{
         width: 99.8%;
         height: 100%;
         display: flex;
-        z-index: -1;
     }
 
     .navbtns button{
         padding-top: 7px;
     }
-    
     
 
     .container{
