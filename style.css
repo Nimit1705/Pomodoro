@@ -229,14 +229,15 @@ button{
 }
 
 #setting-modal{
-    width: 38vw;
+    width: 78vh;
     height: 80vh;
     max-width: 800px;
     margin: 5% auto;
-    background-color: #fff;
+    background-color: var(--primary-color);
     border-radius: 5vh;
     overflow: hidden;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border: var(--borders);
     /* display: flex; */
 }
 
@@ -244,45 +245,61 @@ button{
     display: flex;
     justify-content:flex-end;
     align-items: flex-end;
-    margin-top: 10px;
-    margin-right: 20px;
+    margin-top: 2vh;
+    margin-right: 2vh;
 }
 
-.modal-content{
-    display:flex;
-    width: 38vw;
-    height: 80vh;
+.setting-nav button{
+    border: none;
+    fill:var(--light-font-color);
 }
 
-.left-section {
-    text-align: center;
-    width: 30%;
-    height: 100%;
-    padding: 20px;
-    border-right: 1px solid #ccc;
-    /* display: flex;
-    flex-direction: column; */
+.setting-menu{
+    color:var(--active-text-color);
+    font-size: 1.7vh ;
+    margin: 0 4vh 0 4vh;
+}
+.setting-menu h1{
+    font-weight:1000;
 }
 
 .setting-options{
-    /* margin-top: 20%; */
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.setting-options li {
-    cursor: pointer;
-}
-
-.right-section {
+    font-weight: light;
+    font-size: 2.3vh;
+    margin: 4vh;
     margin-top: 2vh;
-    margin-left: 2vw;
-    width: 70%;
-    height: 100%;
+}
+
+.setting-options select{
+    margin-top: 0.5vh;
+    margin-bottom: 2vh;
+    border-radius: 1.2vh;
+    width: 50vh;
+    height: 5vh;
+    background-color: var(--secondary-color);
+    color: var(--active-text-color);
+}
+
+.volumeControl{
+    width: 40vh;
+    accent-color: #64ccf8 ;
 
 }
+
+
+
+.save{
+    border-color:var(--borders);
+    font-size: 2vh;
+    border-radius: 2vh;
+    margin-top: 37vh;
+    margin-left: 59vh;
+    color: var(--active-text-color);
+    width: 12vh;
+    height: 6vh;
+}
+
+
 
 
 
@@ -382,6 +399,54 @@ button{
         top: 0; left: 0; bottom: 0;
         width: 1.5px;
         background: var(--button-border-accent);
+    }
+
+    #setting-modal{
+        width: 100%;
+        height: 100%;
+        max-width: 800px;
+        background-color: var(--primary-color);
+        border-radius: 0;
+        overflow: hidden;
+        box-shadow: none;
+        border: var(--borders);
+    }
+
+    .setting-menu{
+        color:var(--active-text-color);
+        font-size: 1.7vh ;
+        margin: 0 4vh 0 4vh;
+    }
+    
+    .setting-options{
+        font-weight: light;
+        font-size: 2.3vh;
+        margin: 0;
+        margin-top: 2vh;
+    }
+    
+    .setting-options select{
+        margin-top: 0.5vh;
+        border-radius: 1.2vh;
+        width: 30vh;
+        height: 5vh;
+        background-color: var(--secondary-color);
+        color: var(--active-text-color);
+    }
+
+    .volumeControl{
+        width: 30vh;
+    }
+
+    .save{
+        border-color:var(--borders);
+        font-size: 2vh;
+        border-radius: 2vh;
+        margin-top: 57vh;
+        margin-left: 27vh;
+        color: var(--active-text-color);
+        width: 12vh;
+        height: 6vh;
     }
 
     

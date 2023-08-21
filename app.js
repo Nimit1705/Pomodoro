@@ -149,4 +149,57 @@ themeToggle.addEventListener('click', () => {
     }
 });
 
+//=====================Settings===================================
 
+const settingsModal = document.querySelector(".setting-modal");
+const openSetting = document.querySelector(".settings");
+const closeSetting = document.querySelector(".close-modal")
+
+const audioDrop = document.getElementById("audioDropdown");
+const save = document.getElementById("save");
+
+let selectedAudio = localStorage.getItem("selectedAudio");
+let selectedVolume = localStorage.getItem("selectedVolume");
+
+openSetting.addEventListener('click', () =>{
+    settingsModal.showModal();
+})
+
+closeSetting.addEventListener('click', () =>{
+    settingsModal.close();
+})
+
+
+if(selectedAudio){
+    alarmSound.src = `./assets/${selectedAudio}.mp3`;
+    audioDrop.value = selectedAudio;
+}
+
+if (selectedVolume) {
+    alarmSound.volume = selectedVolume;
+    volumeControl.value = selectedVolume;
+}
+
+audioDrop.addEventListener('change', function(){
+    const selectedVal = audioDrop.value;
+    alarmSound.src = `./assets/${selectedVal}.mp3`;
+    alarmSound.load();
+    playAlarm();
+})
+
+volumeControl.addEventListener('input', function() {
+    const volume = volumeControl.value;
+    alarmSound.volume = volume;
+    playAlarm();
+});
+
+save.addEventListener('click', function(){
+    const selectedVal = audioDrop.value;
+    const volume = volumeControl.value;
+    localStorage.setItem("selectedAudio", selectedVal)
+    localStorage.setItem("selectedVolume", volume);
+    
+    alarmSound.pause();
+    alarmSound.currentTime = 0;
+    settingsModal.close();
+})
