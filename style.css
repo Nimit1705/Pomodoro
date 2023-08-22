@@ -409,7 +409,7 @@ button{
         border-radius: 0;
         overflow: hidden;
         box-shadow: none;
-        border: var(--borders);
+        border: none;
     }
 
     .setting-menu{
@@ -442,10 +442,10 @@ button{
         border-color:var(--borders);
         font-size: 2vh;
         border-radius: 2vh;
-        margin-top: 57vh;
-        margin-left: 27vh;
+        margin-top: 50vh;
+        margin-left: 0;
         color: var(--active-text-color);
-        width: 12vh;
+        width: 100%;
         height: 6vh;
     }
 
