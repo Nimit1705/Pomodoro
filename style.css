@@ -442,7 +442,7 @@ button{
         border-color:var(--borders);
         font-size: 2vh;
         border-radius: 2vh;
-        margin-top: 100%;
+        margin-top: 10vh;
         margin-left: 0;
         color: var(--active-text-color);
         width: 100%;
