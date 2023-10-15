@@ -151,9 +151,15 @@ themeToggle.addEventListener('click', () => {
 
 //=====================Settings===================================
 
+
+
 const settingsModal = document.querySelector(".setting-modal");
 const openSetting = document.querySelector(".settings");
 const closeSetting = document.querySelector(".close-modal")
+
+
+//=======Audio Settings==============
+
 
 const audioDrop = document.getElementById("audioDropdown");
 const save = document.getElementById("save");
@@ -193,6 +199,8 @@ volumeControl.addEventListener('input', function() {
     playAlarm();
 });
 
+//=======Save button=====
+
 save.addEventListener('click', function(){
     const selectedVal = audioDrop.value;
     const volume = volumeControl.value;
@@ -203,3 +211,21 @@ save.addEventListener('click', function(){
     alarmSound.currentTime = 0;
     settingsModal.close();
 })
+
+
+
+
+
+// //====timer setting=====
+
+// const pomoTime = document.querySelector('#pomodoro');
+
+// function changePomo(newTime){
+//     pomoTime.data = newTime;
+
+
+// }
+
+
+
+
